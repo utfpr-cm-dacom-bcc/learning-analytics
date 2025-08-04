@@ -1,0 +1,51 @@
+[
+  {
+    "usuario": "5",
+    "tempo_resposta": "PT122S",
+    "timestamp": "2025-07-23T22:37:25.000Z",
+    "materia": "String Variables Review Quiz",
+    "atividade": "String Variables Review Quiz Attempt 17"
+  },
+  {
+    "usuario": "5",
+    "tempo_resposta": "PT188S",
+    "timestamp": "2025-07-17T22:36:38.000Z",
+    "materia": "Teste quiz",
+    "atividade": "Teste quiz Attempt 15"
+  },
+  {
+    "usuario": "5",
+    "tempo_resposta": "PT52S",
+    "timestamp": "2025-07-17T22:34:38.000Z",
+    "materia": "Introduction and Printing Review Quiz",
+    "atividade": "Introduction and Printing Review Quiz Attempt 16"
+  },
+  {
+    "usuario": "4",
+    "tempo_resposta": "PT14S",
+    "timestamp": "2025-07-17T22:24:15.000Z",
+    "materia": "Introduction and Printing Review Quiz",
+    "atividade": "Introduction and Printing Review Quiz Attempt 14"
+  },
+  {
+    "usuario": "4",
+    "tempo_resposta": "PT165S",
+    "timestamp": "2025-06-03T17:05:16.000Z",
+    "materia": "String Variables Review Quiz",
+    "atividade": "String Variables Review Quiz Attempt 11"
+  },
+  {
+    "usuario": "4",
+    "tempo_resposta": "PT223S",
+    "timestamp": "2025-06-03T17:01:54.000Z",
+    "materia": "Introduction and Printing Review Quiz",
+    "atividade": "Introduction and Printing Review Quiz Attempt 10"
+  },
+  {
+    "usuario": "4",
+    "tempo_resposta": "PT5S",
+    "timestamp": "2025-05-29T20:58:50.000Z",
+    "materia": "Teste quiz",
+    "atividade": "Teste quiz Attempt 9"
+  }
+]
