@@ -15,4 +15,6 @@ As métricas implementadas seguem as definições propostas por Leitão (2017) e
 
 Também é necessário verificar a existência dos campos `actor` e `result.score.raw` em cada *statement*, pois páginas apenas visualizadas/completadas por alunos podem conter o mesmo verbo, mas não possuem pontuação associada — e, portanto, não devem ser consideradas nessa métrica.
 
-### Métrica de ...
+Veja um [exemplo completo de statement de pontuação](statements-exemplos/statement_pontuacao.json).
+
+### Métrica de Tempo de Resposta
