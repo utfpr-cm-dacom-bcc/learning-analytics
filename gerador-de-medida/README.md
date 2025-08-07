@@ -44,6 +44,31 @@ O resultado gerado é um arquivo JSON com as seguintes informações por usuári
 
 Veja um [exemplo completo de statement de tempo de resposta](statements-exemplos/statement_tempo_resposta.json).
 
-### Métrica de Nível de Desordem: 
+### Nível de Desordem:
+
+- Essa métrica calcula a desordem das respostas finais de um estudante em uma atividade avaliativa, com base na **entropia das permutações** (Hₒ). A ideia é medir o quanto a ordem de resposta de um aluno difere da ordem original proposta pelo professor (Leitão, 2017, p. 36).
+
+- Valores mais próximos de `1` indicam maior desordem — ou seja, o estudante respondeu as questões em uma ordem significativamente diferente da ordem prevista. Isso pode indicar um estilo próprio de resolução ou até confusão na estrutura da atividade. Valores próximos de `0` indicam respostas mais alinhadas com a ordem esperada.
+
+- Para calcular essa métrica corretamente, é necessário conhecer **duas ordens**:
+  1. A **ordem original das questões** do quiz (a sequência em que foram apresentadas)
+  2. A **ordem em que o aluno respondeu** às questões
+
+- Contudo, **os statements xAPI do Moodle não incluem diretamente a ordem original das questões** dentro do quiz. Além disso, o campo `timestamp` pode não ter precisão suficiente para reconstruir a ordem de respostas. Por isso, recomenda-se usar o campo `stored`, que possui maior precisão temporal, como critério para ordenação.
+
+- Os statements utilizados para esse cálculo devem conter o verbo:  
+`http://adlnet.gov/expapi/verbs/answered`
+
+Além disso, é necessário verificar a existência dos campos:
+- `actor.account.name` (identificador do estudante)
+- `object.id` (identificador da questão)
+- `context.contextActivities.parent` (para agrupar as questões por tentativa de quiz)
+- `stored` (para reconstruir a ordem das respostas com maior precisão)
+
+**Importante:**  
+Sem a ordem original das questões (fornecida, por exemplo, via integração com a API do Moodle ou por dados exportados do banco), não é possível calcular a métrica de desordem com precisão total. 
+
+Veja um [exemplo de statement de resposta de quiz](statements-exemplos/statement_resposta_quiz.json).
+
 
 ### Métrica de Nível de Compreensão:
