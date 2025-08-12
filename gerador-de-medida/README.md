@@ -97,3 +97,22 @@ O objetivo é registrar apenas o maior número de tentativa por atividade, evita
 - Número da tentativa mais recente.
 
 Essa métrica é útil para entender o comportamento de reenvio e repetição de tentativas pelos estudantes.
+
+### Métricas de Tempo Total Gasto em Visitas Reais
+
+Essa métrica calcula, para cada usuário, o tempo de permanência em uma sessão de acesso ao ambiente virtual, com base no intervalo entre o momento de login e a última atividade antes de um novo login.
+
+#### Como funciona:
+1. São analisados *statements* de todos os tipos, com atenção especial para o verbo:
+`"Logged In"`
+2. Para cada usuário, os *statements* são ordenados cronologicamente.
+3. Uma **sessão** começa quando o usuário realiza um `"Logged In"` e termina no **último statement** antes do próximo `"Logged In"` (ou no último statement disponível, caso não haja outro login).
+4. O tempo de cada sessão é calculado pela diferença entre o `timestamp` do login e o `timestamp` da última atividade da sessão.
+5. O tempo é registrado no formato de duração ISO 8601 (exemplo: `"PT28S"`).
+6. O resultado final é um arquivo JSON contendo, para cada sessão:
+- Usuário,
+- Timestamp do login,
+- Timestamp da última atividade na sessão,
+- Tempo total passado entre os dois.
+
+Essa métrica permite identificar o tempo efetivo de engajamento de cada estudante por sessão de uso, desconsiderando períodos entre logins diferentes.
