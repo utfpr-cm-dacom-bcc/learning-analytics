@@ -72,3 +72,28 @@ Veja um [exemplo de statement de resposta de quiz](statements-exemplos/statement
 
 
 ### Métrica de Nível de Compreensão:
+
+## Métricas de Engajamento de Aprendizagem em Cursos Online (Li et al., 2021)
+
+As métricas implementadas seguem as definições propostas por Li et al. (2021) em um contexto mais amplo de ambientes de aprendizagem online e sistemas de gestão de aprendizagem (LMS).
+
+### Métricas de Tentativas por Questionário
+
+Essa métrica identifica, para cada usuário, a **tentativa mais recente** realizada em cada questionário (atividade avaliativa) de uma determinada matéria.  
+O objetivo é registrar apenas o maior número de tentativa por atividade, evitando duplicatas de tentativas anteriores.
+
+#### Como funciona:
+1. São analisados *statements* com o verbo:
+`http://adlnet.gov/expapi/verbs/completed`
+2. É extraído:
+- **Usuário** (`actor.account.name`),
+- **Matéria** (`context.contextActivities.parent[0].definition.name.en`),
+- **Atividade** (`object.definition.name.en`), que inclui o número da tentativa no formato `"Attempt N"`.
+3. Para cada combinação única de **usuário**, **matéria** e **atividade** (sem o número da tentativa), o código compara todas as tentativas registradas e mantém apenas aquela com o maior número de `"Attempt"`.
+4. O resultado final é um arquivo JSON com:
+- Usuário,
+- Matéria,
+- Nome da atividade,
+- Número da tentativa mais recente.
+
+Essa métrica é útil para entender o comportamento de reenvio e repetição de tentativas pelos estudantes.
