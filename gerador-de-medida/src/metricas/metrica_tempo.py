@@ -1,5 +1,5 @@
 import json
-from fetch_statements import fetch_statements
+from ..fetch_statements import fetch_statements
 from datetime import datetime
 
 def calcular_tempo_resposta(statements):

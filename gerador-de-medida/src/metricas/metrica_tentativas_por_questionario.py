@@ -1,6 +1,6 @@
 import json
 import re
-from fetch_statements import fetch_statements
+from ..fetch_statements import fetch_statements
 
 def calcular_tentativas_por_questionario(statements):
     tentativas_mais_recentes = {}

@@ -1,9 +1,11 @@
-from metrica_pontuacao import calcular_pontuacao
-from metrica_tempo import calcular_tempo_resposta
-from metrica_tentativas_por_questionario import calcular_tentativas_por_questionario
-from metrica_tempo_total_gasto_em_visitas_reais import calcular_tempo_total_gasto_em_visitas_reais
-from metrica_porcentagem_do_curso_acessada import calcular_porcentagem_do_curso_acessada
-from fetch_statements import fetch_statements
+from src.fetch_statements import fetch_statements
+
+from src.metricas.metrica_pontuacao import calcular_pontuacao
+from src.metricas.metrica_tempo import calcular_tempo_resposta
+from src.metricas.metrica_tentativas_por_questionario import calcular_tentativas_por_questionario
+from src.metricas.metrica_tempo_total_gasto_em_visitas_reais import calcular_tempo_total_gasto_em_visitas_reais
+from src.metricas.metrica_porcentagem_do_curso_acessada import calcular_porcentagem_do_curso_acessada
+
 
 def main():
     statements = fetch_statements({

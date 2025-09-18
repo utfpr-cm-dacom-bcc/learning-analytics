@@ -1,0 +1,200 @@
+{
+    "Activity examples": {
+        "curso": "Activity examples",
+        "sessoes": {
+            "6": {
+                "sessao_id": "6",
+                "atividades": {
+                    "48": {
+                        "id": "48",
+                        "nome": "A standard forum for general use",
+                        "usuarios": {
+                            "usuarios_viewed": [
+                                "8",
+                                "6"
+                            ],
+                            "usuarios_completed": [
+                                "8"
+                            ],
+                            "qtd_viewed": 2,
+                            "qtd_completed": 1
+                        }
+                    },
+                    "sem_id": {
+                        "id": "sem_id",
+                        "nome": "Teste GabiSmith",
+                        "usuarios": {
+                            "usuarios_viewed": [
+                                "8"
+                            ],
+                            "usuarios_completed": [],
+                            "qtd_viewed": 1,
+                            "qtd_completed": 0
+                        }
+                    }
+                }
+            },
+            "10": {
+                "sessao_id": "10",
+                "atividades": {
+                    "60": {
+                        "id": "60",
+                        "nome": "A listening quiz",
+                        "usuarios": {
+                            "usuarios_viewed": [
+                                "8",
+                                "7",
+                                "6"
+                            ],
+                            "usuarios_completed": [
+                                "8",
+                                "7",
+                                "6"
+                            ],
+                            "qtd_viewed": 3,
+                            "qtd_completed": 3
+                        }
+                    },
+                    "61": {
+                        "id": "61",
+                        "nome": "A quiz with a password",
+                        "usuarios": {
+                            "usuarios_viewed": [
+                                "7",
+                                "6"
+                            ],
+                            "usuarios_completed": [
+                                "7",
+                                "6"
+                            ],
+                            "qtd_viewed": 2,
+                            "qtd_completed": 2
+                        }
+                    },
+                    "62": {
+                        "id": "62",
+                        "nome": "CBM Quiz example",
+                        "usuarios": {
+                            "usuarios_viewed": [
+                                "7"
+                            ],
+                            "usuarios_completed": [],
+                            "qtd_viewed": 1,
+                            "qtd_completed": 0
+                        }
+                    },
+                    "58": {
+                        "id": "58",
+                        "nome": "Demo Quiz with all standard Quiz Questions",
+                        "usuarios": {
+                            "usuarios_viewed": [
+                                "7",
+                                "6"
+                            ],
+                            "usuarios_completed": [
+                                "6"
+                            ],
+                            "qtd_viewed": 2,
+                            "qtd_completed": 1
+                        }
+                    }
+                }
+            },
+            "11": {
+                "sessao_id": "11",
+                "atividades": {
+                    "67": {
+                        "id": "67",
+                        "nome": "Folder of Revision Papers",
+                        "usuarios": {
+                            "usuarios_viewed": [
+                                "8",
+                                "7",
+                                "6"
+                            ],
+                            "usuarios_completed": [
+                                "8",
+                                "7",
+                                "6"
+                            ],
+                            "qtd_viewed": 3,
+                            "qtd_completed": 3
+                        }
+                    },
+                    "66": {
+                        "id": "66",
+                        "nome": "An MP3 file",
+                        "usuarios": {
+                            "usuarios_viewed": [
+                                "8",
+                                "7",
+                                "6"
+                            ],
+                            "usuarios_completed": [
+                                "8",
+                                "7",
+                                "6"
+                            ],
+                            "qtd_viewed": 3,
+                            "qtd_completed": 3
+                        }
+                    },
+                    "65": {
+                        "id": "65",
+                        "nome": "An image file",
+                        "usuarios": {
+                            "usuarios_viewed": [
+                                "8",
+                                "7",
+                                "6"
+                            ],
+                            "usuarios_completed": [
+                                "8",
+                                "7",
+                                "6"
+                            ],
+                            "qtd_viewed": 3,
+                            "qtd_completed": 3
+                        }
+                    }
+                }
+            },
+            "8": {
+                "sessao_id": "8",
+                "atividades": {
+                    "54": {
+                        "id": "54",
+                        "nome": "Global warming",
+                        "usuarios": {
+                            "usuarios_viewed": [
+                                "7"
+                            ],
+                            "usuarios_completed": [],
+                            "qtd_viewed": 1,
+                            "qtd_completed": 0
+                        }
+                    }
+                }
+            },
+            "4": {
+                "sessao_id": "4",
+                "atividades": {
+                    "44": {
+                        "id": "44",
+                        "nome": "Image gallery",
+                        "usuarios": {
+                            "usuarios_viewed": [
+                                "7"
+                            ],
+                            "usuarios_completed": [
+                                "7"
+                            ],
+                            "qtd_viewed": 1,
+                            "qtd_completed": 1
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

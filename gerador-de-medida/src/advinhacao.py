@@ -4,7 +4,7 @@ import re
 from fetch_statements import fetch_statements
 
 # Caminho do arquivo JSON final
-OUTPUT_FILE = "atividades.json"
+OUTPUT_FILE = "../data/atividades.json"
 
 # Função para carregar o JSON existente (se houver)
 def carregar_json_existente():

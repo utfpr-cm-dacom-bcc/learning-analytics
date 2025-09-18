@@ -1,6 +1,6 @@
 from collections import defaultdict
 import json
-from fetch_statements import fetch_statements
+from ..fetch_statements import fetch_statements
 
 def calcular_pontuacao(statements):
     usuarios = defaultdict(lambda: defaultdict(dict))
