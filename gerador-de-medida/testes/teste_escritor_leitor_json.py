@@ -4,7 +4,7 @@ from src.scripts.load_statements_from_file import load_statements_from_file
 from src.scripts.save_statements_to_file import save_statements_to_file
 
 # Buscar do RALPH
-statements = fetch_statements({"limit": 10})
+statements = fetch_statements({"limit": 1000})
 
 # Salvar no arquivo
 save_statements_to_file(statements, filename="statements.json")
