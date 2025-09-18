@@ -1,8 +1,7 @@
-from projeto.fetch_statements import fetch_statements
+from src.fetch_statements import fetch_statements
 
-import scripts 
-from scripts import load_statements_from_file
-from scripts import save_statements_to_file
+from src.scripts.load_statements_from_file import load_statements_from_file
+from src.scripts.save_statements_to_file import save_statements_to_file
 
 # Buscar do RALPH
 statements = fetch_statements({"limit": 10})
