@@ -1,10 +1,11 @@
 import json
 import os
 import re
-from fetch_statements import fetch_statements
+from src.fetch_statements import fetch_statements
 
 # Caminho do arquivo JSON final
-OUTPUT_FILE = "../data/atividades.json"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+OUTPUT_FILE = os.path.join(BASE_DIR, "..", "data", "atividades.json")
 
 # Função para carregar o JSON existente (se houver)
 def carregar_json_existente():
