@@ -51,7 +51,6 @@ def main2():
 
     print("Calculando métrica de pontuação...")
     calcular_pontuacao(statements)
-
    
     print("Calculando métrica de tempo de resposta...")
     calcular_tempo_resposta(statements)
@@ -66,5 +65,6 @@ def main2():
 
     print("Calculando métrica de porcentagem do curso acessada...")
     calcular_porcentagem_do_curso_acessada('data/' + arquivo_json)
+
 if __name__ == "__main__":
     main2()

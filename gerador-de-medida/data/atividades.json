@@ -116,6 +116,27 @@
                         }
                     }
                 }
+            },
+            "4": {
+                "sessao_id": "4",
+                "atividades": {
+                    "18": {
+                        "id": "18",
+                        "nome": "Conditionals Review Quiz",
+                        "usuarios": {
+                            "usuarios_viewed": [
+                                "2"
+                            ],
+                            "usuarios_completed": [],
+                            "usuarios_received_review": [],
+                            "qtd_viewed": 1,
+                            "qtd_completed": 0,
+                            "qtd_received_review": 0,
+                            "usuarios_viewed_review": [],
+                            "qtd_viewed_review": 0
+                        }
+                    }
+                }
             }
         }
     },
@@ -162,19 +183,9 @@
                                 "6"
                             ],
                             "qtd_viewed": 2,
-                            "qtd_completed": 2
-                        }
-                    },
-                    "sem_id": {
-                        "id": "sem_id",
-                        "nome": "Teste GabiSmith",
-                        "usuarios": {
-                            "usuarios_viewed": [
-                                "8"
-                            ],
-                            "usuarios_completed": [],
-                            "qtd_viewed": 1,
-                            "qtd_completed": 0
+                            "qtd_completed": 2,
+                            "usuarios_received_review": [],
+                            "qtd_received_review": 0
                         }
                     }
                 }
@@ -189,15 +200,34 @@
                             "usuarios_viewed": [
                                 "8",
                                 "7",
-                                "6"
+                                "6",
+                                "2"
                             ],
                             "usuarios_completed": [
                                 "8",
                                 "7",
                                 "6"
                             ],
-                            "qtd_viewed": 3,
-                            "qtd_completed": 3
+                            "qtd_viewed": 4,
+                            "qtd_completed": 3,
+                            "usuarios_received_review": [],
+                            "qtd_received_review": 0,
+                            "usuarios_viewed_review": [],
+                            "qtd_viewed_review": 0
+                        }
+                    },
+                    "62": {
+                        "id": "62",
+                        "nome": "CBM Quiz example",
+                        "usuarios": {
+                            "usuarios_viewed": [
+                                "7"
+                            ],
+                            "usuarios_completed": [],
+                            "qtd_viewed": 1,
+                            "qtd_completed": 0,
+                            "usuarios_received_review": [],
+                            "qtd_received_review": 0
                         }
                     },
                     "61": {
@@ -213,19 +243,25 @@
                                 "6"
                             ],
                             "qtd_viewed": 2,
-                            "qtd_completed": 2
+                            "qtd_completed": 2,
+                            "usuarios_received_review": [],
+                            "qtd_received_review": 0
                         }
                     },
-                    "62": {
-                        "id": "62",
-                        "nome": "CBM Quiz example",
+                    "59": {
+                        "id": "59",
+                        "nome": "New question types quiz - Drag, drop and Select missing words",
                         "usuarios": {
                             "usuarios_viewed": [
-                                "7"
+                                "5"
                             ],
                             "usuarios_completed": [],
+                            "usuarios_received_review": [],
                             "qtd_viewed": 1,
-                            "qtd_completed": 0
+                            "qtd_completed": 0,
+                            "qtd_received_review": 0,
+                            "usuarios_viewed_review": [],
+                            "qtd_viewed_review": 0
                         }
                     },
                     "58": {
@@ -233,14 +269,23 @@
                         "nome": "Demo Quiz with all standard Quiz Questions",
                         "usuarios": {
                             "usuarios_viewed": [
-                                "7",
-                                "6"
+                                "4",
+                                "2"
                             ],
-                            "usuarios_completed": [
-                                "6"
+                            "usuarios_completed": [],
+                            "usuarios_received_review": [
+                                {
+                                    "usuario": "4",
+                                    "timestamp": "2025-10-13T17:09:12.000Z"
+                                }
+                            ],
+                            "usuarios_viewed_review": [
+                                "4"
                             ],
                             "qtd_viewed": 2,
-                            "qtd_completed": 1
+                            "qtd_completed": 0,
+                            "qtd_received_review": 1,
+                            "qtd_viewed_review": 1
                         }
                     }
                 }
@@ -263,7 +308,9 @@
                                 "6"
                             ],
                             "qtd_viewed": 3,
-                            "qtd_completed": 3
+                            "qtd_completed": 3,
+                            "usuarios_received_review": [],
+                            "qtd_received_review": 0
                         }
                     },
                     "66": {
@@ -281,7 +328,9 @@
                                 "6"
                             ],
                             "qtd_viewed": 3,
-                            "qtd_completed": 3
+                            "qtd_completed": 3,
+                            "usuarios_received_review": [],
+                            "qtd_received_review": 0
                         }
                     },
                     "65": {
@@ -299,7 +348,9 @@
                                 "6"
                             ],
                             "qtd_viewed": 3,
-                            "qtd_completed": 3
+                            "qtd_completed": 3,
+                            "usuarios_received_review": [],
+                            "qtd_received_review": 0
                         }
                     }
                 }
@@ -316,7 +367,9 @@
                             ],
                             "usuarios_completed": [],
                             "qtd_viewed": 1,
-                            "qtd_completed": 0
+                            "qtd_completed": 0,
+                            "usuarios_received_review": [],
+                            "qtd_received_review": 0
                         }
                     }
                 }
@@ -335,7 +388,9 @@
                                 "7"
                             ],
                             "qtd_viewed": 1,
-                            "qtd_completed": 1
+                            "qtd_completed": 1,
+                            "usuarios_received_review": [],
+                            "qtd_received_review": 0
                         }
                     }
                 }
