@@ -14,10 +14,17 @@
                                 "4"
                             ],
                             "usuarios_completed": [
-                                "5"
+                                "5",
+                                "7",
+                                "8",
+                                "6"
                             ],
                             "qtd_viewed": 2,
-                            "qtd_completed": 1
+                            "qtd_completed": 4,
+                            "usuarios_received_review": [],
+                            "qtd_received_review": 0,
+                            "usuarios_viewed_review": [],
+                            "qtd_viewed_review": 0
                         }
                     },
                     "9": {
@@ -45,10 +52,16 @@
                                 "5"
                             ],
                             "usuarios_completed": [
-                                "5"
+                                "5",
+                                "7",
+                                "6"
                             ],
                             "qtd_viewed": 1,
-                            "qtd_completed": 1
+                            "qtd_completed": 3,
+                            "usuarios_received_review": [],
+                            "qtd_received_review": 0,
+                            "usuarios_viewed_review": [],
+                            "qtd_viewed_review": 0
                         }
                     },
                     "12": {
@@ -56,13 +69,23 @@
                         "nome": "Introduction and Printing Review Quiz",
                         "usuarios": {
                             "usuarios_viewed": [
-                                "5"
+                                "5",
+                                "7",
+                                "8",
+                                "6"
                             ],
                             "usuarios_completed": [
-                                "5"
+                                "5",
+                                "7",
+                                "8",
+                                "6"
                             ],
-                            "qtd_viewed": 1,
-                            "qtd_completed": 1
+                            "qtd_viewed": 4,
+                            "qtd_completed": 4,
+                            "usuarios_received_review": [],
+                            "qtd_received_review": 0,
+                            "usuarios_viewed_review": [],
+                            "qtd_viewed_review": 0
                         }
                     }
                 }
@@ -72,14 +95,25 @@
                 "atividades": {
                     "13": {
                         "id": "13",
-                        "nome": "String Variables Unit Materials",
+                        "nome": "Video Lesson",
                         "usuarios": {
                             "usuarios_viewed": [
-                                "5"
+                                "5",
+                                "7",
+                                "8",
+                                "6"
                             ],
-                            "usuarios_completed": [],
-                            "qtd_viewed": 1,
-                            "qtd_completed": 0
+                            "usuarios_completed": [
+                                "7",
+                                "8",
+                                "6"
+                            ],
+                            "qtd_viewed": 4,
+                            "qtd_completed": 3,
+                            "usuarios_received_review": [],
+                            "qtd_received_review": 0,
+                            "usuarios_viewed_review": [],
+                            "qtd_viewed_review": 0
                         }
                     },
                     "14": {
@@ -87,13 +121,21 @@
                         "nome": "String Variables Review Quiz",
                         "usuarios": {
                             "usuarios_viewed": [
-                                "5"
+                                "5",
+                                "7",
+                                "6"
                             ],
                             "usuarios_completed": [
-                                "5"
+                                "5",
+                                "7",
+                                "6"
                             ],
-                            "qtd_viewed": 1,
-                            "qtd_completed": 1
+                            "qtd_viewed": 3,
+                            "qtd_completed": 3,
+                            "usuarios_received_review": [],
+                            "qtd_received_review": 0,
+                            "usuarios_viewed_review": [],
+                            "qtd_viewed_review": 0
                         }
                     }
                 }
@@ -185,7 +227,9 @@
                             "qtd_viewed": 2,
                             "qtd_completed": 2,
                             "usuarios_received_review": [],
-                            "qtd_received_review": 0
+                            "qtd_received_review": 0,
+                            "usuarios_viewed_review": [],
+                            "qtd_viewed_review": 0
                         }
                     }
                 }
@@ -201,15 +245,19 @@
                                 "8",
                                 "7",
                                 "6",
-                                "2"
+                                "2",
+                                "5",
+                                "4"
                             ],
                             "usuarios_completed": [
                                 "8",
                                 "7",
-                                "6"
+                                "6",
+                                "5",
+                                "4"
                             ],
-                            "qtd_viewed": 4,
-                            "qtd_completed": 3,
+                            "qtd_viewed": 6,
+                            "qtd_completed": 5,
                             "usuarios_received_review": [],
                             "qtd_received_review": 0,
                             "usuarios_viewed_review": [],
@@ -221,13 +269,16 @@
                         "nome": "CBM Quiz example",
                         "usuarios": {
                             "usuarios_viewed": [
-                                "7"
+                                "7",
+                                "4"
                             ],
                             "usuarios_completed": [],
-                            "qtd_viewed": 1,
+                            "qtd_viewed": 2,
                             "qtd_completed": 0,
                             "usuarios_received_review": [],
-                            "qtd_received_review": 0
+                            "qtd_received_review": 0,
+                            "usuarios_viewed_review": [],
+                            "qtd_viewed_review": 0
                         }
                     },
                     "61": {
@@ -236,16 +287,19 @@
                         "usuarios": {
                             "usuarios_viewed": [
                                 "7",
-                                "6"
+                                "6",
+                                "4"
                             ],
                             "usuarios_completed": [
                                 "7",
                                 "6"
                             ],
-                            "qtd_viewed": 2,
+                            "qtd_viewed": 3,
                             "qtd_completed": 2,
                             "usuarios_received_review": [],
-                            "qtd_received_review": 0
+                            "qtd_received_review": 0,
+                            "usuarios_viewed_review": [],
+                            "qtd_viewed_review": 0
                         }
                     },
                     "59": {
@@ -253,13 +307,23 @@
                         "nome": "New question types quiz - Drag, drop and Select missing words",
                         "usuarios": {
                             "usuarios_viewed": [
-                                "5"
+                                "5",
+                                "4",
+                                "2"
                             ],
-                            "usuarios_completed": [],
-                            "usuarios_received_review": [],
-                            "qtd_viewed": 1,
-                            "qtd_completed": 0,
-                            "qtd_received_review": 0,
+                            "usuarios_completed": [
+                                "5",
+                                "4"
+                            ],
+                            "usuarios_received_review": [
+                                {
+                                    "usuario": "4",
+                                    "timestamp": "2025-10-15T22:11:14.000Z"
+                                }
+                            ],
+                            "qtd_viewed": 3,
+                            "qtd_completed": 2,
+                            "qtd_received_review": 1,
                             "usuarios_viewed_review": [],
                             "qtd_viewed_review": 0
                         }
@@ -270,22 +334,34 @@
                         "usuarios": {
                             "usuarios_viewed": [
                                 "4",
-                                "2"
+                                "2",
+                                "7",
+                                "6",
+                                "5"
                             ],
-                            "usuarios_completed": [],
+                            "usuarios_completed": [
+                                "6",
+                                "5",
+                                "4"
+                            ],
                             "usuarios_received_review": [
                                 {
                                     "usuario": "4",
                                     "timestamp": "2025-10-13T17:09:12.000Z"
+                                },
+                                {
+                                    "usuario": "5",
+                                    "timestamp": "2025-10-15T22:16:55.000Z"
                                 }
                             ],
                             "usuarios_viewed_review": [
-                                "4"
+                                "4",
+                                "5"
                             ],
-                            "qtd_viewed": 2,
-                            "qtd_completed": 0,
-                            "qtd_received_review": 1,
-                            "qtd_viewed_review": 1
+                            "qtd_viewed": 5,
+                            "qtd_completed": 3,
+                            "qtd_received_review": 2,
+                            "qtd_viewed_review": 2
                         }
                     }
                 }
@@ -300,17 +376,21 @@
                             "usuarios_viewed": [
                                 "8",
                                 "7",
-                                "6"
+                                "6",
+                                "5"
                             ],
                             "usuarios_completed": [
                                 "8",
                                 "7",
-                                "6"
+                                "6",
+                                "5"
                             ],
-                            "qtd_viewed": 3,
-                            "qtd_completed": 3,
+                            "qtd_viewed": 4,
+                            "qtd_completed": 4,
                             "usuarios_received_review": [],
-                            "qtd_received_review": 0
+                            "qtd_received_review": 0,
+                            "usuarios_viewed_review": [],
+                            "qtd_viewed_review": 0
                         }
                     },
                     "66": {
@@ -320,17 +400,23 @@
                             "usuarios_viewed": [
                                 "8",
                                 "7",
-                                "6"
+                                "6",
+                                "5",
+                                "4"
                             ],
                             "usuarios_completed": [
                                 "8",
                                 "7",
-                                "6"
+                                "6",
+                                "5",
+                                "4"
                             ],
-                            "qtd_viewed": 3,
-                            "qtd_completed": 3,
+                            "qtd_viewed": 5,
+                            "qtd_completed": 5,
                             "usuarios_received_review": [],
-                            "qtd_received_review": 0
+                            "qtd_received_review": 0,
+                            "usuarios_viewed_review": [],
+                            "qtd_viewed_review": 0
                         }
                     },
                     "65": {
@@ -340,17 +426,41 @@
                             "usuarios_viewed": [
                                 "8",
                                 "7",
-                                "6"
+                                "6",
+                                "5",
+                                "4"
                             ],
                             "usuarios_completed": [
                                 "8",
                                 "7",
-                                "6"
+                                "6",
+                                "5",
+                                "4"
                             ],
-                            "qtd_viewed": 3,
-                            "qtd_completed": 3,
+                            "qtd_viewed": 5,
+                            "qtd_completed": 5,
                             "usuarios_received_review": [],
-                            "qtd_received_review": 0
+                            "qtd_received_review": 0,
+                            "usuarios_viewed_review": [],
+                            "qtd_viewed_review": 0
+                        }
+                    },
+                    "70": {
+                        "id": "70",
+                        "nome": "URL",
+                        "usuarios": {
+                            "usuarios_viewed": [
+                                "4"
+                            ],
+                            "usuarios_completed": [
+                                "4"
+                            ],
+                            "usuarios_received_review": [],
+                            "usuarios_viewed_review": [],
+                            "qtd_viewed": 1,
+                            "qtd_completed": 1,
+                            "qtd_received_review": 0,
+                            "qtd_viewed_review": 0
                         }
                     }
                 }
@@ -369,7 +479,9 @@
                             "qtd_viewed": 1,
                             "qtd_completed": 0,
                             "usuarios_received_review": [],
-                            "qtd_received_review": 0
+                            "qtd_received_review": 0,
+                            "usuarios_viewed_review": [],
+                            "qtd_viewed_review": 0
                         }
                     }
                 }
@@ -390,7 +502,9 @@
                             "qtd_viewed": 1,
                             "qtd_completed": 1,
                             "usuarios_received_review": [],
-                            "qtd_received_review": 0
+                            "qtd_received_review": 0,
+                            "usuarios_viewed_review": [],
+                            "qtd_viewed_review": 0
                         }
                     }
                 }
@@ -409,7 +523,11 @@
                                 "6"
                             ],
                             "qtd_viewed": 1,
-                            "qtd_completed": 1
+                            "qtd_completed": 1,
+                            "usuarios_received_review": [],
+                            "qtd_received_review": 0,
+                            "usuarios_viewed_review": [],
+                            "qtd_viewed_review": 0
                         }
                     },
                     "41": {
@@ -423,7 +541,11 @@
                                 "6"
                             ],
                             "qtd_viewed": 1,
-                            "qtd_completed": 1
+                            "qtd_completed": 1,
+                            "usuarios_received_review": [],
+                            "qtd_received_review": 0,
+                            "usuarios_viewed_review": [],
+                            "qtd_viewed_review": 0
                         }
                     }
                 }
@@ -440,7 +562,32 @@
                             ],
                             "usuarios_completed": [],
                             "qtd_viewed": 1,
-                            "qtd_completed": 0
+                            "qtd_completed": 0,
+                            "usuarios_received_review": [],
+                            "qtd_received_review": 0,
+                            "usuarios_viewed_review": [],
+                            "qtd_viewed_review": 0
+                        }
+                    }
+                }
+            },
+            "12": {
+                "sessao_id": "12",
+                "atividades": {
+                    "73": {
+                        "id": "73",
+                        "nome": "Technology Talk for EFL Class",
+                        "usuarios": {
+                            "usuarios_viewed": [
+                                "5"
+                            ],
+                            "usuarios_completed": [],
+                            "usuarios_received_review": [],
+                            "usuarios_viewed_review": [],
+                            "qtd_viewed": 1,
+                            "qtd_completed": 0,
+                            "qtd_received_review": 0,
+                            "qtd_viewed_review": 0
                         }
                     }
                 }

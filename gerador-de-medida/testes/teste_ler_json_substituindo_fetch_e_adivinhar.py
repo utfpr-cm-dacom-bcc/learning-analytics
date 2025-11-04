@@ -2,7 +2,7 @@ from src.scripts.load_statements_from_file import load_statements_from_file
 from src.metricas.metrica_pontuacao import calcular_pontuacao
 from src.adivinhacao import processar_statements, adivinhar
 
-statements_lidos = load_statements_from_file("statements_feedback.json")
+statements_lidos = load_statements_from_file("statements.json")
 
 #print(f"Statements lidos: {len(statements_lidos)}")
 
