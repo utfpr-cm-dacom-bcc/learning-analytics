@@ -1,0 +1,10 @@
+from src.scripts.load_statements_from_file import load_statements_from_file
+from src.adivinhacao import adivinhar
+from src.metricas.metrica_proporcao_reviews_lidos import calcular_feedback_lido_por_usuario
+
+statements_lidos = load_statements_from_file("statements.json")
+
+adivinhar(statements_lidos)
+
+arquivo_json = "atividades.json"
+calcular_feedback_lido_por_usuario('data/' + arquivo_json)
