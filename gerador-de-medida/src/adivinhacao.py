@@ -12,9 +12,8 @@ OUTPUT_FILE = os.path.join(BASE_DIR, "..", "data", "atividades.json")
 RE_SLOT = re.compile(r" Review Slot\s+\d+$", re.IGNORECASE)
 RE_ATTEMPT = re.compile(r"\s+Attempt\s+\d+$", re.IGNORECASE)
 
-# Formato de data e hora do xAPI (ISO 8601 com milissegundos)
+# Formato de data e hora do xAPI (ISO 8601 com e sem milissegundos)
 DATETIME_FORMAT = "%Y-%m-%dT%H:%M:%S.%fZ" 
-# Alternativa para lidar com timestamps sem milissegundos
 DATETIME_FORMAT_NO_MS = "%Y-%m-%dT%H:%M:%SZ" 
 
 # Função auxiliar para parsear o timestamp, lidando com formatos comuns
@@ -36,15 +35,16 @@ def carregar_json_existente():
         with open(OUTPUT_FILE, "r", encoding="utf-8") as f:
             try:
                 return json.load(f)
+
             except json.JSONDecodeError:
                 return {}
+
     return {}
 
 def salvar_json(dados):
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(dados, f, indent=4, ensure_ascii=False)
 
-# Funções utilitárias (inalteradas)
 def extrair_id_atividade(url):
     match = re.search(r"id=(\d+)", url)
     return match.group(1) if match else "sem_id"
@@ -90,25 +90,6 @@ def extrair_atividade_principal_revisao(st):
 def processar_statements(statements):
     dados = carregar_json_existente()
 
-    # == INÍCIO DA CORREÇÃO DE ESTRUTURA ==
-    # Garante que 'usuarios_received_review' sempre contém dicionários, 
-    # migrando dados antigos (lista de strings) se necessário.
-    for curso_data in dados.values():
-        for sessao_data in curso_data.get("sessoes", {}).values():
-            for atividade_data in sessao_data.get("atividades", {}).values():
-                usuarios_data = atividade_data.get("usuarios", {})
-                
-                # Verifica se a lista de received_review é uma lista de strings (formato antigo)
-                if usuarios_data and usuarios_data.get("usuarios_received_review"):
-                    lista_antiga = usuarios_data["usuarios_received_review"]
-                    if lista_antiga and isinstance(lista_antiga[0], str):
-                        # print(f"DEBUG: Migrando estrutura antiga para atividade {atividade_data['id']} no curso {curso_data['curso']}.")
-                        # Migra a lista de strings para lista de dicionários com timestamp "0"
-                        usuarios_data["usuarios_received_review"] = [
-                            {"usuario": u, "timestamp": "2000-01-01T00:00:00.000Z"} for u in lista_antiga
-                        ]
-    # == FIM DA CORREÇÃO DE ESTRUTURA ==
-    
     for st in statements:
         verbo_id = st.get("verb", {}).get("id", "")
         objeto_id = st.get("object", {}).get("id", "")
@@ -116,7 +97,6 @@ def processar_statements(statements):
         timestamp = st.get("timestamp")
         
         if not timestamp:
-            # print(f"DEBUG: Statement ignorado: Falta 'timestamp' para statement: {st.get('id', 'N/A')}")
             continue
 
         st_datetime = parse_timestamp(timestamp)
@@ -128,7 +108,6 @@ def processar_statements(statements):
         
         curso, sessao_id = extrair_curso_sessao(context)
         if not curso or not sessao_id:
-            # print(f"DEBUG: Falha na extração: Curso/Sessão inválido para statement: {st.get('id', 'N/A')}")
             continue
 
         atividade_id, atividade_nome, usuario, acao_tipo = None, None, None, None
@@ -151,7 +130,6 @@ def processar_statements(statements):
             atividade_id = extrair_id_atividade(atividade.get("id", ""))
             
             if atividade_id == "sem_id":
-                # print(f"DEBUG: Falha na extração: Atividade 'sem_id' ignorada para statement: {st.get('id', 'N/A')}")
                 continue
             
             atividade_nome = limpar_nome_atividade(atividade.get("definition", {}).get("name", {}).get("en", "Sem nome"))
@@ -163,8 +141,6 @@ def processar_statements(statements):
             
         if not atividade_id:
             continue
-            
-        # === Início da Estruturação e Agregação de Dados ===
         
         # Inicialização do Curso, Sessão e Atividade
         if curso not in dados:
@@ -192,25 +168,33 @@ def processar_statements(statements):
         usuarios_data = dados[curso]["sessoes"][sessao_id]["atividades"][atividade_id]["usuarios"]
         dados[curso]["sessoes"][sessao_id]["atividades"][atividade_id]["nome"] = atividade_nome 
         
-        # Garante a existência das novas chaves para JSON carregado
-        for key in ["usuarios_received_review", "qtd_received_review", "usuarios_viewed_review", "qtd_viewed_review"]:
+        # Garante a existência das chaves
+        for key in ["usuarios_viewed", "usuarios_completed", "usuarios_received_review", "qtd_received_review", "usuarios_viewed_review", "qtd_viewed_review", "qtd_viewed", "qtd_completed"]:
              if key not in usuarios_data:
                 usuarios_data[key] = [] if "usuarios" in key else 0
-        
 
         # Atualiza os dados de acordo com a ação (verbo)
         if acao_tipo == "viewed":
-            if usuario not in usuarios_data["usuarios_viewed"]:
-                usuarios_data["usuarios_viewed"].append(usuario)
+            ja_visualizou = any(item['usuario'] == usuario for item in usuarios_data["usuarios_viewed"])
+            
+            if not ja_visualizou:
+                usuarios_data["usuarios_viewed"].append({
+                    "usuario": usuario, 
+                    "timestamp": timestamp
+                })
                 usuarios_data["qtd_viewed"] = len(usuarios_data["usuarios_viewed"])
 
         elif acao_tipo == "completed":
-            if usuario not in usuarios_data["usuarios_completed"]:
-                usuarios_data["usuarios_completed"].append(usuario)
+            ja_completou = any(item['usuario'] == usuario for item in usuarios_data["usuarios_completed"])
+            
+            if not ja_completou:
+                usuarios_data["usuarios_completed"].append({
+                    "usuario": usuario, 
+                    "timestamp": timestamp
+                })
                 usuarios_data["qtd_completed"] = len(usuarios_data["usuarios_completed"])
 
         elif acao_tipo == "received_review":
-            # Adiciona usuário e timestamp
             ja_recebeu = any(item['usuario'] == usuario for item in usuarios_data["usuarios_received_review"])
             
             if not ja_recebeu:
@@ -228,36 +212,28 @@ def processar_statements(statements):
             received_reviews = [item for item in usuarios_data["usuarios_received_review"] if item['usuario'] == usuario]
             
             if received_reviews:
-                # Se for a primeira execução, queremos garantir que o timestamp do RECEIVED seja lido
-                # Se for a segunda execução, a lista deve estar populada
-                
-                # Pega a última (ou única) revisão recebida
                 received_timestamp_str = received_reviews[-1]['timestamp']
                 received_datetime = parse_timestamp(received_timestamp_str)
                 
                 if received_datetime:
-                    # Verifica se o timestamp da visualização é posterior ou igual ao do recebimento
                     if st_datetime >= received_datetime:
                         pode_contar = True
-                    # else:
-                        # print(f"DEBUG: Visualização anterior ao recebimento. View: {st_datetime}, Received: {received_datetime}. Statement: {st.get('id', 'N/A')}")
-            # else:
-                # print(f"DEBUG: Usuário {usuario} visualizou review, mas 'received_review' não encontrado. Statement: {st.get('id', 'N/A')}")
             
-            if pode_contar and usuario not in usuarios_data["usuarios_viewed_review"]:
-                usuarios_data["usuarios_viewed_review"].append(usuario)
-                usuarios_data["qtd_viewed_review"] = len(usuarios_data["usuarios_viewed_review"])
+            if pode_contar:
+                ja_visualizou_review = any(item == usuario for item in usuarios_data["usuarios_viewed_review"])
+                
+                if not ja_visualizou_review:
+                    usuarios_data["usuarios_viewed_review"].append(usuario)
+                    usuarios_data["qtd_viewed_review"] = len(usuarios_data["usuarios_viewed_review"])
 
 
     salvar_json(dados)
 
 def adivinhar(statements):
+    # A dupla chamada serve para garantir que statements de 'received_review' sejam processados antes dos 'viewed_review' se a ordem dos dados for inconsistente
     processar_statements(statements)
     processar_statements(statements)
 
-# ==============================
-# Exemplo de uso
-# ==============================
 if __name__ == "__main__":
     statements = fetch_statements({
         "limit": 1000
