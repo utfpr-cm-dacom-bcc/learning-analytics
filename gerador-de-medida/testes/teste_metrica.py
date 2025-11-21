@@ -1,12 +1,20 @@
 from src.scripts.load_statements_from_file import load_statements_from_file
 from src.adivinhacao import adivinhar
-from src.metricas.metrica_proporcao_reviews_lidos import calcular_feedback_lido_por_usuario
-from src.metricas.metrica_nivel_desordem import calcular_nivel_desordem
 from src.metricas.metrica_nivel_compreensao import calcular_nivel_compreensao
+from src.metricas.metrica_nivel_confusao import calcular_nivel_confusao
+from src.metricas.metrica_nivel_desordem import calcular_nivel_desordem
+from src.metricas.metrica_pontuacao import calcular_pontuacao
+from src.metricas.metrica_porcentagem_do_curso_acessada import calcular_porcentagem_do_curso_acessada
+from src.metricas.metrica_proporcao_reviews_lidos import calcular_feedback_lido_por_usuario
+from src.metricas.metrica_proporcao_visualizacoes_por_atividade import calcular_proporcao_visualizacoes_por_atividade
+from src.metricas.metrica_tempo_total_gasto_em_visitas_reais import calcular_tempo_total_gasto_em_visitas_reais
+from src.metricas.metrica_tempo import calcular_tempo_resposta
+from src.metricas.metrica_tentativas_por_questionario import calcular_tentativas_por_questionario
+from src.metricas.metrica_visualizacoes_por_objeto import calcular_visualizacoes_por_objeto
 
 statements_lidos = load_statements_from_file("statements.json")
 
 adivinhar(statements_lidos)
 
 arquivo_json = "atividades.json"
-calcular_nivel_desordem('data/' + arquivo_json)
+calcular_nivel_confusao('data/' + arquivo_json)
