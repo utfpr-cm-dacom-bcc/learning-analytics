@@ -6,3 +6,6 @@ To deepen the performance evaluation, metrics proposed by Leitão (2017) are add
 The combination of these methodological perspectives and technologies allows for a granular analysis of learner behavior, providing valuable insights for educators. By transcending the limitations of traditional recording systems, this integration enables more accurate diagnoses, the identification of learning patterns, and the foundation for more personalized and effective pedagogical strategies, promoting academic success in distributed learning environments.
 
 Keywords: xAPI, Moodle, LRS, Performance Metrics, Learning Engagement, Virtual Learning Environments.
+
+Authors: Danilo Balman Garcia and Rafael Machado Wanner
+Advisors: Marco Aurélio Graciotto Silva and Walter Takashi Nakamura
