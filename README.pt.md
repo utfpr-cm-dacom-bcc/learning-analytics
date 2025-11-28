@@ -5,4 +5,4 @@ O cenário educacional contemporâneo, impulsionado pela expansão dos Ambientes
 Palavras-chave: xAPI, Moodle, LRS, Métricas de Desempenho, Engajamento de Aprendizagem, Ambientes Virtuais de Aprendizagem.
 
 Autores: Danilo Balman Garcia and Rafael Machado Wanner
-Orientadores: Marco Aurélio Graciotto Silva and Walter Takashi Nakamura
+Orientadores: Marco Aurélio Graciotto Silva e Walter Takashi Nakamura
