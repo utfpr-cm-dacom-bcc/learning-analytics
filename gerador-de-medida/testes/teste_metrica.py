@@ -36,9 +36,6 @@ arquivo_json = "atividades.json"
 # Métrica de Proporção de Reviews Lidos
 #calcular_feedback_lido_por_usuario('data/' + arquivo_json)
 
-# Métrica de Proporção de Visualizacoes por Atividade
-#calcular_proporcao_visualizacoes_por_atividade('data/' + arquivo_json)
-
 # Métrica de Tempo Total Gasto em Visitas Reais
 #calcular_tempo_total_gasto_em_visitas_reais(statements_lidos)
 
