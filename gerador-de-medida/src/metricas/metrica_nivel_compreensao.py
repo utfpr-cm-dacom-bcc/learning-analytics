@@ -31,7 +31,7 @@ def get_tempo_de_resposta(caminho_arquivo, curso_id, sessao_id, atividade_id, qu
 
 # --- Função Principal ---
 
-def calcular_nivel_compreensao(caminho_arquivo_entrada, caminho_arquivo_saida):
+def calcular_nivel_compreensao(caminho_arquivo_entrada, caminho_arquivo_saida="resultado_nivel_compreensao.json"):
     """
     Calcula a métrica Lu (Nível de Compreensão) percorrendo a estrutura do JSON.
     Lu = (IDT * IDC * IDQ * Desvio) / TempoDeResposta

@@ -15,8 +15,10 @@ def calcular_porcentagem_do_curso_acessada(arquivo_json):
         usuarios_curso = set()
         for sessao_id, sessao_info in sessoes.items():
             for atividade_id, atividade in sessao_info["atividades"].items():
-                usuarios_curso.update(atividade["usuarios"]["usuarios_viewed"])
-                usuarios_curso.update(atividade["usuarios"]["usuarios_completed"])
+                for u in atividade["usuarios"]["usuarios_viewed"]:
+                    usuarios_curso.add(u["usuario"])
+                for u in atividade["usuarios"]["usuarios_completed"]:
+                    usuarios_curso.add(u["usuario"])
 
         # Preparar resultados por curso
         resultados[curso_nome] = {}
@@ -37,8 +39,11 @@ def calcular_porcentagem_do_curso_acessada(arquivo_json):
 
                 # Contar quantas atividades o usuário acessou nessa sessão
                 for atividade_id, atividade in atividades.items():
-                    if (usuario in atividade["usuarios"]["usuarios_viewed"] or
-                        usuario in atividade["usuarios"]["usuarios_completed"]):
+                    usuarios_viewed_ids = {u["usuario"] for u in atividade["usuarios"]["usuarios_viewed"]}
+                    usuarios_completed_ids = {u["usuario"] for u in atividade["usuarios"]["usuarios_completed"]}
+
+                    if (usuario in usuarios_viewed_ids or
+                        usuario in usuarios_completed_ids):
                         acessadas_sessao += 1
 
                 # Percentual por sessão

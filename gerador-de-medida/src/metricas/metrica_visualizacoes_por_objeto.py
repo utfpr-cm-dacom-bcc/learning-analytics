@@ -1,7 +1,7 @@
 import json
 import os
 
-def calcular_visualizacoes_por_objeto(caminho_arquivo_entrada, caminho_arquivo_saida="resultado_calcular_visualizacoes_por_objeto.json"):
+def calcular_visualizacoes_por_objeto(caminho_arquivo_entrada, caminho_arquivo_saida="resultado_visualizacoes_por_objeto.json"):
     """
     Carrega dados de atividades, calcula a métrica VC e salva o resultado em um novo JSON.
 
@@ -77,6 +77,6 @@ def calcular_visualizacoes_por_objeto(caminho_arquivo_entrada, caminho_arquivo_s
 if __name__ == "__main__":
     arquivo_json = "../../data/atividades.json"
 
-    caminho_saida = "../../resultado_calcular_visualizacoes_por_objeto.json"
+    caminho_saida = "../../resultado_visualizacoes_por_objeto.json"
 
     calcular_visualizacoes_por_objeto(arquivo_json,caminho_arquivo_saida=caminho_saida)
