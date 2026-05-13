@@ -1,2 +1,10 @@
 resultado_*.json
 __pycache__/
+# Ignorar arquivos de dados pesados
+*.csv
+xapi_statements_simulados.json
+xapi_notas.json
+
+# (Opcional) Ignorar pastas virtuais do Python, se você usar
+__pycache__/
+.env

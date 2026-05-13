@@ -12,11 +12,11 @@ from src.metricas.metrica_tempo import calcular_tempo_resposta
 from src.metricas.metrica_tentativas_por_questionario import calcular_tentativas_por_questionario
 from src.metricas.metrica_visualizacoes_por_objeto import calcular_visualizacoes_por_objeto
 
-statements_lidos = load_statements_from_file("statements.json")
+statements_lidos = load_statements_from_file("xapi_statements_simulados.json")
 
-adivinhar(statements_lidos)
+# adivinhar(statements_lidos)
 
-arquivo_json = "atividades.json"
+# arquivo_json = "atividades.json"
 
 # Métrica de Nível de Compreensão
 #calcular_nivel_compreensao('data/' + arquivo_json)
@@ -43,7 +43,7 @@ arquivo_json = "atividades.json"
 #calcular_tempo_resposta(statements_lidos)
 
 # Métrica de Tentativas por Questionario
-#calcular_tentativas_por_questionario(statements_lidos)
+calcular_tentativas_por_questionario(statements_lidos)
 
 # Métrica de Visualizacoes por Objeto
 #calcular_visualizacoes_por_objeto('data/' + arquivo_json)
