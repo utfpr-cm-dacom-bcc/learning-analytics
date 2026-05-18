@@ -12,7 +12,14 @@ from src.metricas.metrica_tempo import calcular_tempo_resposta
 from src.metricas.metrica_tentativas_por_questionario import calcular_tentativas_por_questionario
 from src.metricas.metrica_visualizacoes_por_objeto import calcular_visualizacoes_por_objeto
 
-statements_lidos = load_statements_from_file("xapi_statements_simulados.json")
+statements_lidos = load_statements_from_file("xapi_statements_completos.json")
+
+
+# Métrica de Tempo de Resposta
+calcular_tempo_resposta(statements_lidos)
+
+# Métrica de Pontuação
+#calcular_pontuacao(statements_lidos)
 
 # adivinhar(statements_lidos)
 
@@ -27,9 +34,6 @@ statements_lidos = load_statements_from_file("xapi_statements_simulados.json")
 # Métrica de Nível de Desordem
 #calcular_nivel_desordem('data/' + arquivo_json)
 
-# Métrica de Pontuação
-#calcular_pontuacao(statements_lidos)
-
 # Métrica de Porcentagem do Curso Acessada
 #calcular_porcentagem_do_curso_acessada('data/' + arquivo_json)
 
@@ -39,11 +43,9 @@ statements_lidos = load_statements_from_file("xapi_statements_simulados.json")
 # Métrica de Tempo Total Gasto em Visitas Reais
 #calcular_tempo_total_gasto_em_visitas_reais(statements_lidos)
 
-# Métrica de Tempo de Resposta
-#calcular_tempo_resposta(statements_lidos)
 
 # Métrica de Tentativas por Questionario
-calcular_tentativas_por_questionario(statements_lidos)
+#calcular_tentativas_por_questionario(statements_lidos)
 
 # Métrica de Visualizacoes por Objeto
 #calcular_visualizacoes_por_objeto('data/' + arquivo_json)

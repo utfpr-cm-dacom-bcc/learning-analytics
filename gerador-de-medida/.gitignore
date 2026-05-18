@@ -8,3 +8,6 @@ xapi_notas.json
 # (Opcional) Ignorar pastas virtuais do Python, se você usar
 __pycache__/
 .env
+
+#Arquivo chega a ter mais de 1GB, então é melhor não versionar
+data/xapi_statements_completos.json

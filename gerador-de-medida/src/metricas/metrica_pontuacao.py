@@ -4,6 +4,14 @@ from ..fetch_statements import fetch_statements
 
 def calcular_pontuacao(statements):
     usuarios = defaultdict(lambda: defaultdict(dict))
+    
+    falhas = {
+        "sem_actor": 0,
+        "sem_raw": 0,
+        "sem_max": 0,
+        "sem_materia": 0,
+        "sem_quiz_id": 0
+    }
 
     for statement in statements:
         actor = statement.get("actor", {}).get("account", {}).get("name")
@@ -24,8 +32,16 @@ def calcular_pontuacao(statements):
 
             if "activitytype/course" in tipo:
                 materia = definition.get("name", {}).get("en")
-            elif "mod/quiz/view.php" in id_parent:
+            if "mod/quiz/view.php" in id_parent:
                 quiz_id = id_parent
+
+        # === REGISTRO DE DEBUG: Onde está faltando dado? ===
+        if not actor: falhas["sem_actor"] += 1
+        if raw is None: falhas["sem_raw"] += 1
+        if not max_score: falhas["sem_max"] += 1
+        if not materia: falhas["sem_materia"] += 1
+        if not quiz_id: falhas["sem_quiz_id"] += 1
+        # ===================================================
 
         if actor and raw is not None and max_score and materia and quiz_id:
             atual = usuarios[actor][materia].get(quiz_id, {"acertos": 0, "total_questoes": max_score})
@@ -34,6 +50,24 @@ def calcular_pontuacao(statements):
                     "acertos": raw,
                     "total_questoes": max_score
                 }
+
+    # === IMPRESSÃO DO DIAGNÓSTICO FINAL ===
+    print("\n" + "="*40)
+    print("        RELATÓRIO DE DEBUG")
+    print("="*40)
+    print(f"Total de statements recebidos: {len(statements)}")
+    print(f"Falhas por falta de Actor (usuário): {falhas['sem_actor']}")
+    print(f"Falhas por falta de Nota Raw (score): {falhas['sem_raw']}")
+    print(f"Falhas por falta de Nota Max (score max): {falhas['sem_max']}")
+    print(f"Falhas por falta de Matéria (course parent): {falhas['sem_materia']}")
+    print(f"Falhas por falta de Quiz ID (quiz parent): {falhas['sem_quiz_id']}")
+    print("="*40)
+
+    if len(statements) > 0 and not usuarios:
+        print("\n[ALERTA] Nenhuma linha passou no IF! Veja a estrutura real do seu primeiro statement:")
+        print(json.dumps(statements[0], indent=2, ensure_ascii=False))
+        print("="*40 + "\n")
+    # ======================================
 
     resultados = []
     for usuario, materias in usuarios.items():
